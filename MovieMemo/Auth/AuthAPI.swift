@@ -26,21 +26,37 @@ extension AuthAPI: TargetType {
     }
   }
   
-  var method: Method {
-    <#code#>
+  var method: Moya.Method {
+    switch self {
+    case .signup(_, _, _):
+      return .post
+    default:
+      return .get
+    }
   }
   
   var sampleData: Data {
-    <#code#>
+    return Data()
   }
   
   var task: Task {
-    <#code#>
+    switch self {
+    case .signup(let name, let email, let password):
+      return .requestParameters(
+        parameters: [
+          "name": name,
+          "email": email,
+          "password": password],
+        encoding: JSONEncoding.default)
+    default:
+      return .requestPlain
+    }
   }
   
   var headers: [String : String]? {
-    <#code#>
+    switch self {
+    default:
+      return ["Content-Type": "application/json"]
+    }
   }
-  
-  
 }

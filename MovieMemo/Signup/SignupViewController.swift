@@ -30,6 +30,13 @@ class SignupViewController: UIViewController {
       return
     }
     
+    AuthNetworkManager.getSignup(name: nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!) { (msg) in
+      let alertVC = UIAlertController(title: "회원가입 완료!", message: msg, preferredStyle: .alert)
+      alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+        self.navigationController?.popViewController(animated: true)
+      }))
+      self.present(alertVC, animated: true, completion: nil)
+    }
   
   }
 }
