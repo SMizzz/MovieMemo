@@ -9,6 +9,7 @@ import Moya
 
 enum AuthAPI {
   case signup(name: String, email: String, password: String)
+  case login(email: String, password: String)
 }
 
 extension AuthAPI: TargetType {
@@ -23,12 +24,14 @@ extension AuthAPI: TargetType {
     switch self {
     case .signup(_, _, _):
       return "/signup"
+    case .login(_, _):
+      return "/login"
     }
   }
   
   var method: Moya.Method {
     switch self {
-    case .signup(_, _, _):
+    case .signup(_, _, _), .login(_, _):
       return .post
     default:
       return .get
@@ -48,6 +51,12 @@ extension AuthAPI: TargetType {
           "email": email,
           "password": password],
         encoding: JSONEncoding.default)
+    case .login(let email, let password):
+      return .requestParameters(
+        parameters: [
+          "email": email,
+          "password": password
+        ], encoding: JSONEncoding.default)
     default:
       return .requestPlain
     }

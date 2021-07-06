@@ -304,7 +304,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Dcc-MC-rHw">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="a5h-Ad-Gws" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="SearchVC" automaticallyAdjustsScrollViewInsets="NO" id="a5h-Ad-Gws" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t7B-Mo-BDK">
                         <autoresizingMask key="autoresizingMask"/>
