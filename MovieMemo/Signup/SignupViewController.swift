@@ -1,0 +1,35 @@
+//
+//  SignupViewController.swift
+//  MovieMemo
+//
+//  Created by 신미지 on 2021/07/06.
+//
+
+import UIKit
+
+class SignupViewController: UIViewController {
+  
+  @IBOutlet weak var nameTextField: UITextField!
+  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var passwordTextField: UITextField!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupTapGRForKeyboardDismissal()
+  }
+  
+  @IBAction func signupBtnTap(_ sender: Any) {
+    if nameTextField.text == "" && emailTextField.text == "" && passwordTextField.text == "" {
+      print("빈칸 있음")
+      let alertVC = UIAlertController(
+        title: "확인!",
+        message: "빈칸이 있어요!",
+        preferredStyle: .alert)
+      alertVC.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+      self.present(alertVC, animated: true, completion: nil)
+      return
+    }
+    
+  
+  }
+}
