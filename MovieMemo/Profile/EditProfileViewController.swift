@@ -6,24 +6,37 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EditProfileViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  
+  @IBOutlet weak var profileImageView: UIImageView!
+  @IBOutlet weak var nameTextField: UITextField!
+  @IBOutlet weak var emailTextField: UITextField!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    getData()
+    nameTextField.autocorrectionType = .no
+    emailTextField.autocorrectionType = .no
+    profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+  }
+  
+  private func getData() {
+    let token = UserDefaults.standard.string(forKey: "token")!
+    AuthNetworkManager.getCurrent(token: token) { [self] (user) in
+      print(user)
+      profileImageView.kf.setImage(with: URL(string: user.avatar))
+      nameTextField.text = user.name
+      emailTextField.text = user.email
     }
+  }
+  
+  @IBAction func cancelBtnTap(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
+  }
+  
+  @IBAction func saveBtnTap(_ sender: Any) {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  }
 }

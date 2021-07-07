@@ -7,6 +7,7 @@
 
 import Moya
 import SwiftyJSON
+import UIKit
 
 class AuthNetworkManager {
   static let provider = MoyaProvider<AuthAPI>()
@@ -45,6 +46,28 @@ class AuthNetworkManager {
           completion(jsonData["token"].string!)
         } catch let err {
           print(err.localizedDescription)
+        }
+      case .failure(let err):
+        print(err.localizedDescription)
+        return
+      }
+    }
+  }
+  
+  static func getCurrent(
+    token: String,
+    completion: @escaping(User) -> ()
+  ) {
+    provider.request(.current(token: token)) { (result) in
+      switch result {
+      case .success(let res):
+        print(res.data)
+        do {
+          let decoder = JSONDecoder()
+          let userData = try decoder.decode(User.self, from: res.data)
+          completion(userData)
+        } catch let err {
+          print(err)
         }
       case .failure(let err):
         print(err.localizedDescription)

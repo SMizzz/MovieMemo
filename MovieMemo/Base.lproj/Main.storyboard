@@ -276,12 +276,18 @@
                                     <imageReference key="image" image="profile" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
+                                <connections>
+                                    <action selector="profileBtnTap:" destination="i41-Po-7P0" eventType="touchUpInside" id="MCK-PV-9Bc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JfV-I5-svd"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="BWI-D0-CQe"/>
+                    <connections>
+                        <outlet property="profileBtn" destination="NaB-JO-B3E" id="fAu-TJ-BrK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9d-U2-RZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -359,8 +365,18 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="프로필 편집" id="nBR-E0-DFi">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="cancel" id="4Fl-ID-m3n"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="check" id="M0B-x9-H8f"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="cancel" id="4Fl-ID-m3n">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="cancelBtnTap:" destination="rRx-OK-LKb" id="tWM-xR-4qe"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="check" id="M0B-x9-H8f">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="saveBtnTap:" destination="rRx-OK-LKb" id="ZZx-hU-oEb"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -403,6 +419,11 @@
                         <viewLayoutGuide key="safeArea" id="jHw-Kp-45H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="FxD-iQ-q6R" id="yZ7-SL-8fn"/>
+                        <outlet property="nameTextField" destination="WUY-a1-zgb" id="Lrc-nA-WYl"/>
+                        <outlet property="profileImageView" destination="dW2-9H-nvh" id="OsE-ba-ruh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hb-qe-zgo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

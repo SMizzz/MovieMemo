@@ -10,6 +10,7 @@ import Moya
 enum AuthAPI {
   case signup(name: String, email: String, password: String)
   case login(email: String, password: String)
+  case current(token: String)
 }
 
 extension AuthAPI: TargetType {
@@ -26,6 +27,8 @@ extension AuthAPI: TargetType {
       return "/signup"
     case .login(_, _):
       return "/login"
+    case .current(_):
+      return "/secret"
     }
   }
   
@@ -64,6 +67,8 @@ extension AuthAPI: TargetType {
   
   var headers: [String : String]? {
     switch self {
+    case .current(let token):
+      return ["Authorization": "Bearer \(token)"]
     default:
       return ["Content-Type": "application/json"]
     }
