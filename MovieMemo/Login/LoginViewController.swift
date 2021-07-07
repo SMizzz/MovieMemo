@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
   
@@ -58,7 +59,14 @@ class LoginViewController: UIViewController {
   
   
   @IBAction func fbBtnTap(_ sender: Any) {
-    
+    let fbLoginManager = LoginManager()
+    fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+      if error != nil {
+        print(error?.localizedDescription)
+        return
+      }
+      print((AccessToken.current?.tokenString)!)
+    }
   }
   
   @IBAction func signupBtnTap(_ sender: Any) {

@@ -7,6 +7,7 @@ target 'MovieMemo' do
 pod "Moya"
 pod "SwiftyJSON"
 pod "Kingfisher"
+pod 'FBSDKLoginKit'
   # Pods for MovieMemo
 
 end
