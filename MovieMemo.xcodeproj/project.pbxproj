@@ -19,6 +19,7 @@
 		027F2EC0269426BF00BFCDA9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F2EBF269426BF00BFCDA9 /* Extension.swift */; };
 		027F2EC826942B9400BFCDA9 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F2EC726942B9400BFCDA9 /* AuthAPI.swift */; };
 		027F2ECC26942B9F00BFCDA9 /* AuthNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F2ECB26942B9F00BFCDA9 /* AuthNetworkManager.swift */; };
+		02D4D5DA26953D2F00BC0CBB /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4D5D926953D2F00BC0CBB /* LogoutViewController.swift */; };
 		5C80CFF71B4EEFBA0799F3C8 /* Pods_MovieMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0AC97DF0A561E04EAE7E63 /* Pods_MovieMemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		027F2EBF269426BF00BFCDA9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		027F2EC726942B9400BFCDA9 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		027F2ECB26942B9F00BFCDA9 /* AuthNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkManager.swift; sourceTree = "<group>"; };
+		02D4D5D926953D2F00BC0CBB /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		7BEBEF0856233FDE1BE388FF /* Pods-MovieMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMemo.debug.xcconfig"; path = "Target Support Files/Pods-MovieMemo/Pods-MovieMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7D54EA801D3F67CA7BB04537 /* Pods-MovieMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMemo.release.xcconfig"; path = "Target Support Files/Pods-MovieMemo/Pods-MovieMemo.release.xcconfig"; sourceTree = "<group>"; };
 		DE0AC97DF0A561E04EAE7E63 /* Pods_MovieMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 				027F2EAA269424DA00BFCDA9 /* Login */,
 				027F2EAB269424ED00BFCDA9 /* Signup */,
 				027F2EB42694256700BFCDA9 /* Search */,
+				02D4D5D826953D2000BC0CBB /* Logout */,
 				027F2EB92694257A00BFCDA9 /* Profile */,
 				027F2E952693FD1D00BFCDA9 /* Main.storyboard */,
 				027F2E982693FD1F00BFCDA9 /* Assets.xcassets */,
@@ -138,6 +141,14 @@
 				027F2ECB26942B9F00BFCDA9 /* AuthNetworkManager.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		02D4D5D826953D2000BC0CBB /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				02D4D5D926953D2F00BC0CBB /* LogoutViewController.swift */,
+			);
+			path = Logout;
 			sourceTree = "<group>";
 		};
 		69A9A4CE1F26C5D9C2C308B4 /* Frameworks */ = {
@@ -279,6 +290,7 @@
 				027F2EC826942B9400BFCDA9 /* AuthAPI.swift in Sources */,
 				027F2E922693FD1D00BFCDA9 /* SceneDelegate.swift in Sources */,
 				027F2EBB2694258700BFCDA9 /* EditProfileViewController.swift in Sources */,
+				02D4D5DA26953D2F00BC0CBB /* LogoutViewController.swift in Sources */,
 				027F2EC0269426BF00BFCDA9 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

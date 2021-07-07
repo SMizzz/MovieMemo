@@ -37,6 +37,5 @@ class SignupViewController: UIViewController {
       }))
       self.present(alertVC, animated: true, completion: nil)
     }
-  
   }
 }

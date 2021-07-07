@@ -15,7 +15,13 @@ class SearchViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+  @IBAction func settingBtnTap(_ sender: Any) {
+    let mainSB = UIStoryboard(name: "Main", bundle: nil)
+    let logoutVC = mainSB.instantiateViewController(withIdentifier: "LogoutVC")
+    logoutVC.modalPresentationStyle = .fullScreen
+    self.present(logoutVC, animated: true, completion: nil)
+  }
+  
     /*
     // MARK: - Navigation
 
