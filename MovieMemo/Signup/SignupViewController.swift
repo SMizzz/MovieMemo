@@ -18,11 +18,16 @@ class SignupViewController: UIViewController {
     setupTapGRForKeyboardDismissal()
   }
   
+  @IBAction func backBtnTap(_ sender: Any) {
+    self.navigationController?.popViewController(animated: true)
+  }
+  
   @IBAction func signupBtnTap(_ sender: Any) {
     if nameTextField.text == "" && emailTextField.text == "" && passwordTextField.text == "" {
       print("빈칸 있음")
+      
       let alertVC = UIAlertController(
-        title: "확인!",
+        title: "확인",
         message: "빈칸이 있어요!",
         preferredStyle: .alert)
       alertVC.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))

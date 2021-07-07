@@ -215,6 +215,9 @@
                                     <navigationItem id="llw-TD-YiH">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrow-left" id="PCq-xa-d4B">
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backBtnTap:" destination="Taf-Bt-NVu" id="iAL-Jm-PyW"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

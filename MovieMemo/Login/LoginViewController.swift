@@ -22,9 +22,16 @@ class LoginViewController: UIViewController {
   }
   
   @IBAction func loginBtnTap(_ sender: Any) {
+    
+    if emailTextField.text == "" && passwordTextfield.text == "" {
+      print("빈칸 있음")
+      return
+    }
+    
     AuthNetworkManager.postLogin(email: emailTextField.text!, password: passwordTextfield.text!) { (token) in
       if token != nil {
         UserDefaults.standard.setValue(token, forKey: "token")
+        
         let alertVC = UIAlertController(title: "🎉", message: "로그인 완료!!", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
           let wnd = UIApplication.shared.windows.filter {$0.isKeyWindow}.first

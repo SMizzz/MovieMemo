@@ -51,7 +51,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func configureInitialViewController() {
     var initialVC: UIViewController
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//    print(UserDefaults.standard.string(forKey: "token")!)
     if UserDefaults.standard.string(forKey: "token") != nil {
       initialVC = storyboard.instantiateViewController(withIdentifier: "SearchVC")
     } else {
