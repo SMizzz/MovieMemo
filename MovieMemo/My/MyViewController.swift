@@ -35,6 +35,7 @@ extension MyViewController: UICollectionViewDelegate, UICollectionViewDataSource
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = memoCollectionView.dequeueReusableCell(withReuseIdentifier: "MemoCell", for: indexPath) as? MemoCell else { return UICollectionViewCell() }
+    print("indexPath \(indexPath.item)")
     cell.imageBtn.setImage(UIImage(named: "harrypotter"), for: .normal)
     cell.titleLabel.text = "해리포터와 불사조 기사단을 보고 나서"
     return cell
