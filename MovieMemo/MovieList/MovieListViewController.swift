@@ -11,14 +11,17 @@ import Kingfisher
 class MovieListViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
-  var movieData = [Movie]()
-  
+  var topRatedData = [Movie]()
+  var upComingData = [Movie]()
+  var nowPlayingData = [Movie]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     configureTableView()
     getData()
     tableView.backgroundColor = .gray
+    let commonCell = UINib(nibName: "TableViewCell", bundle: nil)
+    tableView.register(commonCell, forCellReuseIdentifier: "MovieCell")
   }
   
   private func configureTableView() {
@@ -31,10 +34,31 @@ class MovieListViewController: UIViewController {
   }
   
   private func getData() {
-    MovieNetworkManager.getMovieData { (movie) in
-      print(movie)
-      self.movieData = movie
-      self.tableView.reloadData()
+    //    MovieNetworkManager.getMovieData { (movie) in
+    //      print(movie)
+    //      self.movieData = movie
+    //      self.tableView.reloadData()
+    //    }
+    MovieNetworkManager.getMovieData(source: .nowPlaying) { (movies) in
+      print(movies)
+      self.nowPlayingData = movies
+      OperationQueue.main.addOperation {
+        self.tableView.reloadData()
+      }
+    }
+    
+    MovieNetworkManager.getMovieData(source: .upComing) { (movies) in
+      self.upComingData = movies
+      OperationQueue.main.addOperation {
+        self.tableView.reloadData()
+      }
+    }
+    
+    MovieNetworkManager.getMovieData(source: .topRated) { (movies) in
+      self.topRatedData = movies
+      OperationQueue.main.addOperation {
+        self.tableView.reloadData()
+      }
     }
   }
 }
@@ -42,27 +66,61 @@ class MovieListViewController: UIViewController {
 extension MovieListViewController:
   UITableViewDelegate,
   UITableViewDataSource {
-  func tableView(
-    _ tableView: UITableView,
-    numberOfRowsInSection section: Int
-  ) -> Int {
-    return movieData.count
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 3
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if section == 0 {
+      return topRatedData.count
+    } else if section == 1 {
+      return upComingData.count
+    } else {
+      return nowPlayingData.count
+    }
   }
   
   func tableView(
     _ tableView: UITableView,
     cellForRowAt indexPath: IndexPath
   ) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieCell
-    else { return UITableViewCell()}
-    let movie = movieData[indexPath.row]
-    if let image = movie.posterPath {
-      cell.posterPath.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(image)"))
-    } else {
-      cell.posterPath.kf.setImage(with: URL(string: "https://images-na.ssl-images-amazon.com/images/I/81u6wFnRDHL._AC_SL1500_.jpg"))
+    
+    if indexPath.section == 0 {
+      let topRatedCell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! TableViewCell
+      let topRated = topRatedData[indexPath.row]
+      if let image = topRated.posterPath {
+        topRatedCell.imgView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(image)"))
+      } else {
+        topRatedCell.imgView.kf.setImage(with: URL(string: "https://images-na.ssl-images-amazon.com/images/I/81u6wFnRDHL._AC_SL1500_.jpg"))
+      }
+      topRatedCell.titleLabel.text = topRated.title
+      topRatedCell.voteLabel.text = "💜\(topRated.average)"
+      return topRatedCell
     }
-    cell.name.text = movie.title
-    cell.average.text = "💜\(movie.average)"
+    
+    if indexPath.section == 1 {
+      let upComingCell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! TableViewCell
+      let upComing = upComingData[indexPath.row]
+      if let image = upComing.posterPath {
+        upComingCell.imgView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(image)"))
+      } else {
+        upComingCell.imgView.kf.setImage(with: URL(string: "https://images-na.ssl-images-amazon.com/images/I/81u6wFnRDHL._AC_SL1500_.jpg"))
+      }
+      upComingCell.titleLabel.text = upComing.title
+      upComingCell.voteLabel.text = "💜\(upComing.average)"
+      return upComingCell
+    }
+    
+    let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! TableViewCell
+    let nowPlaying = nowPlayingData[indexPath.row]
+    if let image = nowPlaying.posterPath {
+      cell.imgView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(image)"))
+    } else {
+      cell.imgView.kf.setImage(with: URL(string: "https://images-na.ssl-images-amazon.com/images/I/81u6wFnRDHL._AC_SL1500_.jpg"))
+    }
+    cell.titleLabel.text = nowPlaying.title
+    cell.voteLabel.text = "💜\(nowPlaying.average)"
     return cell
   }
   
@@ -71,5 +129,15 @@ extension MovieListViewController:
     heightForRowAt indexPath: IndexPath
   ) -> CGFloat {
     return 170.0
+  }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    if section == 0 {
+      return "Top Rated"
+    } else if section == 1 {
+      return "UpComing Rated"
+    } else {
+      return "Now Playing"
+    }
   }
 }

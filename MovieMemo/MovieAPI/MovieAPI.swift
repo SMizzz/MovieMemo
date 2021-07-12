@@ -8,25 +8,34 @@
 import Moya
 
 enum MovieAPI {
-  case getMovieData
+  case upComing
+  case topRated
+  case nowPlaying
+  case detail(id: Int)
 }
 
 extension MovieAPI: TargetType {
   var baseURL: URL {
-    guard let url = URL(string: "https://api.themoviedb.org/3/tv/airing_today?api_key=8597e491ed6e80f0de12e349eb60ea6e&language=en-US&page=1") else { fatalError("url error") }
+    guard let url = URL(string: "https://api.themoviedb.org/3/movie") else { fatalError("url error") }
     return url
   }
   
   var path: String {
     switch self {
-    case .getMovieData:
-      return ""
+    case .upComing:
+      return "/upcoming"
+    case .topRated:
+      return "/top_rated"
+    case .nowPlaying:
+      return "/now_playing"
+    case .detail(let id):
+      return "/\(id)"
     }
   }
   
   var method: Moya.Method {
     switch self {
-    case .getMovieData:
+    case .upComing, .topRated, .nowPlaying, .detail(_):
       return .get
     }
   }
@@ -37,15 +46,23 @@ extension MovieAPI: TargetType {
   
   var task: Task {
     switch self {
-    case .getMovieData:
-      return .requestPlain
+    case .upComing, .topRated, .nowPlaying:
+      return .requestParameters(
+        parameters: ["api_key": "1f2d99c9366d63893dfedd75762e09ba"],
+        encoding: URLEncoding.queryString)
+    case .detail(let id):
+      return .requestParameters(
+        parameters: ["api_key": "1f2d99c9366d63893dfedd75762e09ba",
+                     "movie_id": id], encoding: URLEncoding.queryString)
     }
   }
   
   var headers: [String : String]? {
-    switch self {
-    default:
-      return ["Content-Type": "application/json"]
-    }
+//    switch self {
+//    default:
+//      return ["Content-Type": "application/json"]
+//    }
+//  }
+    return ["Content-Type": "application/json"]
   }
 }

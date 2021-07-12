@@ -8,6 +8,7 @@
 import Foundation
 
 struct Movie: Codable {
+  var id: Int = 0
   var posterPath: String? = ""
   var title: String = ""
   var overview: String = ""
@@ -15,7 +16,7 @@ struct Movie: Codable {
   
   enum CodingKeys: String, CodingKey {
     case posterPath = "poster_path"
-    case title = "name"
+    case title = "title"
     case overview
     case average = "vote_average"
   }

@@ -1,17 +1,17 @@
 //
-//  MovieCell.swift
+//  TableViewCell.swift
 //  MovieMemo
 //
-//  Created by 신미지 on 2021/07/10.
+//  Created by 신미지 on 2021/07/12.
 //
 
 import UIKit
 
-class MovieCell: UITableViewCell {
+class TableViewCell: UITableViewCell {
 
-  @IBOutlet weak var posterPath: UIImageView!
-  @IBOutlet weak var name: UILabel!
-  @IBOutlet weak var average: UILabel!
+  @IBOutlet weak var imgView: UIImageView!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var voteLabel: UILabel!
   
   override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +23,5 @@ class MovieCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

@@ -11,9 +11,10 @@ import SwiftyJSON
 class MovieNetworkManager {
   static let provider = MoyaProvider<MovieAPI>()
   static func getMovieData(
+    source: MovieAPI,
     completion: @escaping([Movie]) -> ()
   ) {
-    provider.request(.getMovieData) { (result) in
+    provider.request(source) { (result) in
       switch result {
       case .success(let res):
         do {
@@ -27,6 +28,15 @@ class MovieNetworkManager {
         print(err.localizedDescription)
         return
       }
+    }
+  }
+  
+  static func getDetailMovieData(
+    id: Int,
+    completion: @escaping() -> ()
+  ) {
+    provider.request(.detail(id: id)) { (result) in
+      <#code#>
     }
   }
 }
