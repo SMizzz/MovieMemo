@@ -8,22 +8,35 @@
 import UIKit
 
 class DetailMovieViewController: UIViewController {
+  
+  @IBOutlet weak var posterImageVIew: UIImageView!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var averageTitle: UILabel!
+  @IBOutlet weak var overviewLabel: UILabel!
+//  var selectedIndexPath: IndexPath!
+  var id: Int = 0
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  override func viewDidLoad() {
+    super.viewDidLoad()
+//    UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    getData()
+//    navigationController?.navigationBar.isHidden = true
+    navigationController?.navigationBar.isTranslucent = true
+  }
+  
+  private func getData() {
+    print("detailVC id \(id)")
+    MovieNetworkManager.getDetailMovieData(id: id) { (movies) in
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  }
+  
+  @IBAction func pencilBtnTap(_ sender: Any) {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let composeVC = storyboard.instantiateViewController(withIdentifier: "ComposeVC")
+    self.present(composeVC, animated: true, completion: nil)
+  }
+  
+  @IBAction func cancelBtnTap(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
+  }
 }

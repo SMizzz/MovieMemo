@@ -52,8 +52,10 @@ extension MovieAPI: TargetType {
         encoding: URLEncoding.queryString)
     case .detail(let id):
       return .requestParameters(
-        parameters: ["api_key": "1f2d99c9366d63893dfedd75762e09ba",
-                     "movie_id": id], encoding: URLEncoding.queryString)
+        parameters: [
+          "api_key": "1f2d99c9366d63893dfedd75762e09ba",
+          "movie_id": id],
+        encoding: URLEncoding.queryString)
     }
   }
   

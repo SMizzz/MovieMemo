@@ -34,13 +34,8 @@ class MovieListViewController: UIViewController {
   }
   
   private func getData() {
-    //    MovieNetworkManager.getMovieData { (movie) in
-    //      print(movie)
-    //      self.movieData = movie
-    //      self.tableView.reloadData()
-    //    }
     MovieNetworkManager.getMovieData(source: .nowPlaying) { (movies) in
-      print(movies)
+//      print(movies)
       self.nowPlayingData = movies
       OperationQueue.main.addOperation {
         self.tableView.reloadData()
@@ -139,5 +134,21 @@ extension MovieListViewController:
     } else {
       return "Now Playing"
     }
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    print("did select row at", indexPath)
+    guard let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailMovieVC") as? DetailMovieViewController else { return }
+    
+    if indexPath.section == 0 {
+      print(topRatedData[indexPath.item].id)
+      detailVC.id = topRatedData[indexPath.item].id
+    } else if indexPath.section == 1 {
+      detailVC.id = upComingData[indexPath.item].id
+    } else {
+      detailVC.id = nowPlayingData[indexPath.item].id
+    }
+    self.present(detailVC, animated: true, completion: nil)
   }
 }

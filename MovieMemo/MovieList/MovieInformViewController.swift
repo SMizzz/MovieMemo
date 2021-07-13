@@ -125,7 +125,6 @@ extension MovieInformViewController:
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    
     return 10
   }
 }

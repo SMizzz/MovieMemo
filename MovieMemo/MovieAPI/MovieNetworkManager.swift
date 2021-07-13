@@ -38,10 +38,12 @@ class MovieNetworkManager {
     provider.request(.detail(id: id)) { (result) in
       switch result {
       case .success(let res):
+        print("status code is \(res.response?.statusCode)")
         do {
-          let movieData = try JSONDecoder().decode(MovieDataStore.self, from: res.data)
-          completion(movieData.results)
+          let movieData = try JSONDecoder().decode([Movie].self, from: res.data)
+          completion(movieData)
         } catch let error {
+          print(error)
           print(error.localizedDescription)
         }
       case .failure(let err):
