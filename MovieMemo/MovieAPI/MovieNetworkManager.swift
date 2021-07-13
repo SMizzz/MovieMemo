@@ -33,10 +33,21 @@ class MovieNetworkManager {
   
   static func getDetailMovieData(
     id: Int,
-    completion: @escaping() -> ()
+    completion: @escaping([Movie]) -> ()
   ) {
     provider.request(.detail(id: id)) { (result) in
-      <#code#>
+      switch result {
+      case .success(let res):
+        do {
+          let movieData = try JSONDecoder().decode(MovieDataStore.self, from: res.data)
+          completion(movieData.results)
+        } catch let error {
+          print(error.localizedDescription)
+        }
+      case .failure(let err):
+        print(err.localizedDescription)
+        return
+      }
     }
   }
 }

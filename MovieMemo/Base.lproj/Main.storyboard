@@ -414,12 +414,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4K-24-IbB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4728.985507246377" y="813.61607142857144"/>
+            <point key="canvasLocation" x="3851" y="1608"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
+        <scene sceneID="QFv-cY-dau">
+            <objects>
+                <viewController storyboardIdentifier="MovieInformVC" id="zSO-bf-VHd" customClass="MovieInformViewController" customModule="MovieMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qYL-hj-qAD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0fu-hK-H6k">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2eJ-CD-iTw">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WlH-Dg-QhD"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0fu-hK-H6k" firstAttribute="top" secondItem="WlH-Dg-QhD" secondAttribute="top" id="JQ1-mt-5LX"/>
+                            <constraint firstItem="0fu-hK-H6k" firstAttribute="leading" secondItem="WlH-Dg-QhD" secondAttribute="leading" id="czd-PH-3yf"/>
+                            <constraint firstItem="WlH-Dg-QhD" firstAttribute="bottom" secondItem="0fu-hK-H6k" secondAttribute="bottom" id="ecf-hN-NDd"/>
+                            <constraint firstItem="WlH-Dg-QhD" firstAttribute="trailing" secondItem="0fu-hK-H6k" secondAttribute="trailing" id="xSv-uF-eQa"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="e6O-44-dPf"/>
+                    <connections>
+                        <outlet property="collectionView" destination="0fu-hK-H6k" id="TBe-Vs-U71"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gkg-xD-7Zd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4602.898550724638" y="1607.8125"/>
+        </scene>
+        <!--Detail Movie View Controller-->
         <scene sceneID="WLG-zz-Ebd">
             <objects>
-                <viewController id="dGx-k2-d6y" sceneMemberID="viewController">
+                <viewController id="dGx-k2-d6y" customClass="DetailMovieViewController" customModule="MovieMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="osr-Tc-YGz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -642,11 +680,12 @@
                         <segue destination="i41-Po-7P0" kind="relationship" relationship="viewControllers" id="KXt-WB-crl"/>
                         <segue destination="pbG-Wn-ahR" kind="relationship" relationship="viewControllers" id="sie-gs-gCY"/>
                         <segue destination="dcX-rZ-WTj" kind="relationship" relationship="viewControllers" id="399-dD-GxY"/>
+                        <segue destination="zSO-bf-VHd" kind="relationship" relationship="viewControllers" id="m7k-Qw-Guc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="job-u4-BTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2891" y="432"/>
+            <point key="canvasLocation" x="2822" y="814"/>
         </scene>
     </scenes>
     <resources>

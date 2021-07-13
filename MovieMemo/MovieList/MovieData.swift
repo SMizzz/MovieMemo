@@ -15,6 +15,7 @@ struct Movie: Codable {
   var average: Float = 0.0
   
   enum CodingKeys: String, CodingKey {
+    case id = "id"
     case posterPath = "poster_path"
     case title = "title"
     case overview
@@ -23,6 +24,7 @@ struct Movie: Codable {
   
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
+    id = try values.decode(Int.self, forKey: .id)
     posterPath = try? values.decode(String.self, forKey: .posterPath)
     title = try values.decode(String.self, forKey: .title)
     overview = try values.decode(String.self, forKey: .overview)

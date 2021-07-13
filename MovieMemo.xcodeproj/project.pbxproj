@@ -21,6 +21,12 @@
 		027F2EC0269426BF00BFCDA9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F2EBF269426BF00BFCDA9 /* Extension.swift */; };
 		027F2EC826942B9400BFCDA9 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F2EC726942B9400BFCDA9 /* AuthAPI.swift */; };
 		027F2ECC26942B9F00BFCDA9 /* AuthNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F2ECB26942B9F00BFCDA9 /* AuthNetworkManager.swift */; };
+		02C0DB15269D2C530041AED9 /* UpcomingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0DB13269D2C530041AED9 /* UpcomingCell.swift */; };
+		02C0DB16269D2C530041AED9 /* UpcomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02C0DB14269D2C530041AED9 /* UpcomingCell.xib */; };
+		02C0DB1A269D2CE90041AED9 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0DB18269D2CE90041AED9 /* MovieListCell.swift */; };
+		02C0DB1B269D2CE90041AED9 /* MovieListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02C0DB19269D2CE90041AED9 /* MovieListCell.xib */; };
+		02C0DB1F269D2D960041AED9 /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0DB1E269D2D960041AED9 /* DetailMovieViewController.swift */; };
+		02C0DB23269D30C00041AED9 /* MovieInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0DB22269D30C00041AED9 /* MovieInformViewController.swift */; };
 		02D4D5DA26953D2F00BC0CBB /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4D5D926953D2F00BC0CBB /* LogoutViewController.swift */; };
 		02D4D5DF26954ECD00BC0CBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4D5DE26954ECD00BC0CBB /* User.swift */; };
 		02D4D5ED26957F5000BC0CBB /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4D5EC26957F5000BC0CBB /* MyViewController.swift */; };
@@ -49,6 +55,12 @@
 		027F2EBF269426BF00BFCDA9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		027F2EC726942B9400BFCDA9 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		027F2ECB26942B9F00BFCDA9 /* AuthNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkManager.swift; sourceTree = "<group>"; };
+		02C0DB13269D2C530041AED9 /* UpcomingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCell.swift; sourceTree = "<group>"; };
+		02C0DB14269D2C530041AED9 /* UpcomingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingCell.xib; sourceTree = "<group>"; };
+		02C0DB18269D2CE90041AED9 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
+		02C0DB19269D2CE90041AED9 /* MovieListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCell.xib; sourceTree = "<group>"; };
+		02C0DB1E269D2D960041AED9 /* DetailMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
+		02C0DB22269D30C00041AED9 /* MovieInformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInformViewController.swift; sourceTree = "<group>"; };
 		02D4D5D926953D2F00BC0CBB /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		02D4D5DE26954ECD00BC0CBB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		02D4D5EC26957F5000BC0CBB /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +120,7 @@
 				027F2EB92694257A00BFCDA9 /* Profile */,
 				02D4D5EB26957F4200BC0CBB /* My */,
 				02D4D5EF2695AD1A00BC0CBB /* MovieList */,
+				02C0DB1D269D2D790041AED9 /* DetailMovie */,
 				027F2E952693FD1D00BFCDA9 /* Main.storyboard */,
 				027F2E982693FD1F00BFCDA9 /* Assets.xcassets */,
 				027F2E9A2693FD1F00BFCDA9 /* LaunchScreen.storyboard */,
@@ -165,6 +178,14 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		02C0DB1D269D2D790041AED9 /* DetailMovie */ = {
+			isa = PBXGroup;
+			children = (
+				02C0DB1E269D2D960041AED9 /* DetailMovieViewController.swift */,
+			);
+			path = DetailMovie;
+			sourceTree = "<group>";
+		};
 		02D4D5D826953D2000BC0CBB /* Logout */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +218,11 @@
 				02D4D5F02695AD2700BC0CBB /* MovieListViewController.swift */,
 				022DD319269BE7960046F45E /* TableViewCell.swift */,
 				022DD31A269BE7960046F45E /* TableViewCell.xib */,
+				02C0DB13269D2C530041AED9 /* UpcomingCell.swift */,
+				02C0DB14269D2C530041AED9 /* UpcomingCell.xib */,
+				02C0DB18269D2CE90041AED9 /* MovieListCell.swift */,
+				02C0DB19269D2CE90041AED9 /* MovieListCell.xib */,
+				02C0DB22269D30C00041AED9 /* MovieInformViewController.swift */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -289,6 +315,8 @@
 				027F2E9C2693FD1F00BFCDA9 /* LaunchScreen.storyboard in Resources */,
 				022DD31C269BE7960046F45E /* TableViewCell.xib in Resources */,
 				027F2E992693FD1F00BFCDA9 /* Assets.xcassets in Resources */,
+				02C0DB16269D2C530041AED9 /* UpcomingCell.xib in Resources */,
+				02C0DB1B269D2CE90041AED9 /* MovieListCell.xib in Resources */,
 				027F2E972693FD1D00BFCDA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,12 +379,16 @@
 				02D4D5F12695AD2700BC0CBB /* MovieListViewController.swift in Sources */,
 				027F2EB12694254F00BFCDA9 /* SignupViewController.swift in Sources */,
 				027F2E902693FD1D00BFCDA9 /* AppDelegate.swift in Sources */,
+				02C0DB15269D2C530041AED9 /* UpcomingCell.swift in Sources */,
+				02C0DB1A269D2CE90041AED9 /* MovieListCell.swift in Sources */,
 				027F2EC826942B9400BFCDA9 /* AuthAPI.swift in Sources */,
 				02D4D5F42695AF9000BC0CBB /* MemoCell.swift in Sources */,
 				027F2E922693FD1D00BFCDA9 /* SceneDelegate.swift in Sources */,
 				027F2EBB2694258700BFCDA9 /* EditProfileViewController.swift in Sources */,
 				02D4D5DA26953D2F00BC0CBB /* LogoutViewController.swift in Sources */,
+				02C0DB1F269D2D960041AED9 /* DetailMovieViewController.swift in Sources */,
 				027F2EC0269426BF00BFCDA9 /* Extension.swift in Sources */,
+				02C0DB23269D30C00041AED9 /* MovieInformViewController.swift in Sources */,
 				02DDE14B2699DC010008F7FC /* MovieNetworkManager.swift in Sources */,
 				02D4D5ED26957F5000BC0CBB /* MyViewController.swift in Sources */,
 				02D4D5DF26954ECD00BC0CBB /* User.swift in Sources */,
