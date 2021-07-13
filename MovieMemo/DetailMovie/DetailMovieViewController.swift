@@ -13,20 +13,24 @@ class DetailMovieViewController: UIViewController {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var averageTitle: UILabel!
   @IBOutlet weak var overviewLabel: UILabel!
-//  var selectedIndexPath: IndexPath!
   var id: Int = 0
+  var detailMovieData = [Movie]()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-//    UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
     getData()
-//    navigationController?.navigationBar.isHidden = true
     navigationController?.navigationBar.isTranslucent = true
   }
   
   private func getData() {
     print("detailVC id \(id)")
     MovieNetworkManager.getDetailMovieData(id: id) { (movies) in
+      if let image = movies.posterPath {
+        self.posterImageVIew.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(image)"))
+      } else {
+        print("image가 없습니다.")
+      }
+      
     }
   }
   

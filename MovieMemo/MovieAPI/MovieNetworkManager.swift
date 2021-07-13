@@ -33,14 +33,14 @@ class MovieNetworkManager {
   
   static func getDetailMovieData(
     id: Int,
-    completion: @escaping([Movie]) -> ()
+    completion: @escaping(Movie) -> ()
   ) {
     provider.request(.detail(id: id)) { (result) in
       switch result {
       case .success(let res):
         print("status code is \(res.response?.statusCode)")
         do {
-          let movieData = try JSONDecoder().decode([Movie].self, from: res.data)
+          let movieData = try JSONDecoder().decode(Movie.self, from: res.data)
           completion(movieData)
         } catch let error {
           print(error)

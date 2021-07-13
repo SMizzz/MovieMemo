@@ -1252,11 +1252,11 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1BDC90A1-C1E3-4CE8-A9A6-2F50BC21E70C - bf08bed60017de1f"
+                  uuid = "1BDC90A1-C1E3-4CE8-A9A6-2F50BC21E70C - 10e147bf86bb8a79"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieMemo.MovieNetworkManager.getDetailMovieData(id: Swift.Int, completion: (Swift.Array&lt;MovieMemo.Movie&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieMemo.MovieNetworkManager.getDetailMovieData(id: Swift.Int, completion: (MovieMemo.Movie) -&gt; ()) -&gt; ()"
                   moduleName = "MovieMemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shinmizy/Documents/GitHub/MovieMemo/MovieMemo/MovieAPI/MovieNetworkManager.swift"
@@ -1264,14 +1264,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "329">
+                  offsetFromSymbolStart = "317">
                </Location>
                <Location
-                  uuid = "1BDC90A1-C1E3-4CE8-A9A6-2F50BC21E70C - bf08bed60017de1f"
+                  uuid = "1BDC90A1-C1E3-4CE8-A9A6-2F50BC21E70C - 10e147bf86bb8a79"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieMemo.MovieNetworkManager.getDetailMovieData(id: Swift.Int, completion: (Swift.Array&lt;MovieMemo.Movie&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieMemo.MovieNetworkManager.getDetailMovieData(id: Swift.Int, completion: (MovieMemo.Movie) -&gt; ()) -&gt; ()"
                   moduleName = "MovieMemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shinmizy/Documents/GitHub/MovieMemo/MovieMemo/MovieAPI/MovieNetworkManager.swift"
@@ -1279,7 +1279,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "383">
+                  offsetFromSymbolStart = "371">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1380,11 +1380,11 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "577558DB-5088-4DD8-955C-D03B41AC367C - bf08bed60017dee2"
+                  uuid = "577558DB-5088-4DD8-955C-D03B41AC367C - 10e147bf86bb8a84"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieMemo.MovieNetworkManager.getDetailMovieData(id: Swift.Int, completion: (Swift.Array&lt;MovieMemo.Movie&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieMemo.MovieNetworkManager.getDetailMovieData(id: Swift.Int, completion: (MovieMemo.Movie) -&gt; ()) -&gt; ()"
                   moduleName = "MovieMemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shinmizy/Documents/GitHub/MovieMemo/MovieMemo/MovieAPI/MovieNetworkManager.swift"
@@ -1392,14 +1392,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
                   endingLineNumber = "45"
-                  offsetFromSymbolStart = "1390">
+                  offsetFromSymbolStart = "1368">
                </Location>
                <Location
-                  uuid = "577558DB-5088-4DD8-955C-D03B41AC367C - bf08bed60017dee2"
+                  uuid = "577558DB-5088-4DD8-955C-D03B41AC367C - 10e147bf86bb8a84"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieMemo.MovieNetworkManager.getDetailMovieData(id: Swift.Int, completion: (Swift.Array&lt;MovieMemo.Movie&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieMemo.MovieNetworkManager.getDetailMovieData(id: Swift.Int, completion: (MovieMemo.Movie) -&gt; ()) -&gt; ()"
                   moduleName = "MovieMemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shinmizy/Documents/GitHub/MovieMemo/MovieMemo/MovieAPI/MovieNetworkManager.swift"
@@ -1407,7 +1407,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
                   endingLineNumber = "45"
-                  offsetFromSymbolStart = "1976">
+                  offsetFromSymbolStart = "1954">
                </Location>
             </Locations>
          </BreakpointContent>
