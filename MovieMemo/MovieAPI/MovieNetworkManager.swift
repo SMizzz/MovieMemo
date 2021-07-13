@@ -43,7 +43,6 @@ class MovieNetworkManager {
           let movieData = try JSONDecoder().decode(Movie.self, from: res.data)
           completion(movieData)
         } catch let error {
-          print(error)
           print(error.localizedDescription)
         }
       case .failure(let err):

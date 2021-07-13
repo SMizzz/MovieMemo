@@ -29,13 +29,8 @@ class MovieListViewController: UIViewController {
     tableView.delegate = self
   }
   
-  @IBAction func composeBtnTap(_ sender: Any) {
-    
-  }
-  
   private func getData() {
     MovieNetworkManager.getMovieData(source: .nowPlaying) { (movies) in
-//      print(movies)
       self.nowPlayingData = movies
       OperationQueue.main.addOperation {
         self.tableView.reloadData()
@@ -55,6 +50,10 @@ class MovieListViewController: UIViewController {
         self.tableView.reloadData()
       }
     }
+  }
+  
+  @IBAction func composeBtnTap(_ sender: Any) {
+    
   }
 }
 
@@ -90,7 +89,7 @@ extension MovieListViewController:
         topRatedCell.imgView.kf.setImage(with: URL(string: "https://images-na.ssl-images-amazon.com/images/I/81u6wFnRDHL._AC_SL1500_.jpg"))
       }
       topRatedCell.titleLabel.text = topRated.title
-      topRatedCell.voteLabel.text = "💜\(topRated.average)"
+      topRatedCell.voteLabel.text = "⭐\(topRated.average)"
       return topRatedCell
     }
     
@@ -103,7 +102,7 @@ extension MovieListViewController:
         upComingCell.imgView.kf.setImage(with: URL(string: "https://images-na.ssl-images-amazon.com/images/I/81u6wFnRDHL._AC_SL1500_.jpg"))
       }
       upComingCell.titleLabel.text = upComing.title
-      upComingCell.voteLabel.text = "💜\(upComing.average)"
+      upComingCell.voteLabel.text = "⭐\(upComing.average)"
       return upComingCell
     }
     
@@ -115,7 +114,7 @@ extension MovieListViewController:
       cell.imgView.kf.setImage(with: URL(string: "https://images-na.ssl-images-amazon.com/images/I/81u6wFnRDHL._AC_SL1500_.jpg"))
     }
     cell.titleLabel.text = nowPlaying.title
-    cell.voteLabel.text = "💜\(nowPlaying.average)"
+    cell.voteLabel.text = "⭐\(nowPlaying.average)"
     return cell
   }
   
@@ -136,11 +135,11 @@ extension MovieListViewController:
     }
   }
   
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-    print("did select row at", indexPath)
+  func tableView(
+    _ tableView: UITableView,
+    didSelectRowAt indexPath: IndexPath
+  ) {
     guard let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailMovieVC") as? DetailMovieViewController else { return }
-    
     if indexPath.section == 0 {
       print(topRatedData[indexPath.item].id)
       detailVC.id = topRatedData[indexPath.item].id
@@ -149,6 +148,7 @@ extension MovieListViewController:
     } else {
       detailVC.id = nowPlayingData[indexPath.item].id
     }
+    detailVC.modalPresentationStyle = .fullScreen
     self.present(detailVC, animated: true, completion: nil)
   }
 }

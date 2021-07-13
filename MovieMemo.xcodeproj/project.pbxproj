@@ -28,6 +28,7 @@
 		02C0DB1F269D2D960041AED9 /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0DB1E269D2D960041AED9 /* DetailMovieViewController.swift */; };
 		02C0DB23269D30C00041AED9 /* MovieInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0DB22269D30C00041AED9 /* MovieInformViewController.swift */; };
 		02C0DB29269D661F0041AED9 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0DB28269D661F0041AED9 /* ComposeViewController.swift */; };
+		02C0DB2E269DF2200041AED9 /* MovieFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0DB2D269DF2200041AED9 /* MovieFont.swift */; };
 		02D4D5DA26953D2F00BC0CBB /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4D5D926953D2F00BC0CBB /* LogoutViewController.swift */; };
 		02D4D5DF26954ECD00BC0CBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4D5DE26954ECD00BC0CBB /* User.swift */; };
 		02D4D5ED26957F5000BC0CBB /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4D5EC26957F5000BC0CBB /* MyViewController.swift */; };
@@ -63,6 +64,7 @@
 		02C0DB1E269D2D960041AED9 /* DetailMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
 		02C0DB22269D30C00041AED9 /* MovieInformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInformViewController.swift; sourceTree = "<group>"; };
 		02C0DB28269D661F0041AED9 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		02C0DB2D269DF2200041AED9 /* MovieFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFont.swift; sourceTree = "<group>"; };
 		02D4D5D926953D2F00BC0CBB /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		02D4D5DE26954ECD00BC0CBB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		02D4D5EC26957F5000BC0CBB /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				027F2EBF269426BF00BFCDA9 /* Extension.swift */,
+				02C0DB2D269DF2200041AED9 /* MovieFont.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				02D4D5F82695E8A100BC0CBB /* MovieData.swift in Sources */,
 				02D4D5F12695AD2700BC0CBB /* MovieListViewController.swift in Sources */,
 				027F2EB12694254F00BFCDA9 /* SignupViewController.swift in Sources */,
+				02C0DB2E269DF2200041AED9 /* MovieFont.swift in Sources */,
 				027F2E902693FD1D00BFCDA9 /* AppDelegate.swift in Sources */,
 				02C0DB15269D2C530041AED9 /* UpcomingCell.swift in Sources */,
 				02C0DB1A269D2CE90041AED9 /* MovieListCell.swift in Sources */,

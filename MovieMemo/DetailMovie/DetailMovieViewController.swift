@@ -11,7 +11,7 @@ class DetailMovieViewController: UIViewController {
   
   @IBOutlet weak var posterImageVIew: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var averageTitle: UILabel!
+  @IBOutlet weak var averageLabel: UILabel!
   @IBOutlet weak var overviewLabel: UILabel!
   var id: Int = 0
   var detailMovieData = [Movie]()
@@ -19,7 +19,23 @@ class DetailMovieViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     getData()
-    navigationController?.navigationBar.isTranslucent = true
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+
+      // Make the navigation bar background clear
+      navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+      navigationController?.navigationBar.shadowImage = UIImage()
+      navigationController?.navigationBar.isTranslucent = true
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+
+      // Restore the navigation bar to default
+      navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+      navigationController?.navigationBar.shadowImage = nil
   }
   
   private func getData() {
@@ -30,7 +46,9 @@ class DetailMovieViewController: UIViewController {
       } else {
         print("image가 없습니다.")
       }
-      
+      self.titleLabel.text = movies.title
+      self.averageLabel.text = "⭐\(movies.average)"
+      self.overviewLabel.text = movies.overview
     }
   }
   
