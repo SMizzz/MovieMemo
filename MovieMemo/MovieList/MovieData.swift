@@ -9,6 +9,7 @@ import Foundation
 
 struct Movie: Codable {
   var id: Int = 0
+  var backdropPath: String = ""
   var posterPath: String? = ""
   var title: String = ""
   var overview: String = ""
@@ -16,6 +17,7 @@ struct Movie: Codable {
   
   enum CodingKeys: String, CodingKey {
     case id = "id"
+    case backdropPath = "backdrop_path"
     case posterPath = "poster_path"
     case title = "title"
     case overview
@@ -25,6 +27,7 @@ struct Movie: Codable {
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
     id = try values.decode(Int.self, forKey: .id)
+    backdropPath = try values.decode(String.self, forKey: .backdropPath)
     posterPath = try? values.decode(String.self, forKey: .posterPath)
     title = try values.decode(String.self, forKey: .title)
     overview = try values.decode(String.self, forKey: .overview)

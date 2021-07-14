@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailMovieViewController: UIViewController {
-  
+
   @IBOutlet weak var posterImageVIew: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var averageLabel: UILabel!
@@ -18,25 +18,15 @@ class DetailMovieViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+//    configurePosterImageView()
     getData()
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-
-      // Make the navigation bar background clear
-      navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-      navigationController?.navigationBar.shadowImage = UIImage()
-      navigationController?.navigationBar.isTranslucent = true
+  private func configurePosterImageView() {
+    posterImageVIew.clipsToBounds = true
+    posterImageVIew.layer.cornerRadius = 40
   }
-
-  override func viewWillDisappear(_ animated: Bool) {
-      super.viewWillDisappear(animated)
-
-      // Restore the navigation bar to default
-      navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-      navigationController?.navigationBar.shadowImage = nil
-  }
+ 
   
   private func getData() {
     print("detailVC id \(id)")
