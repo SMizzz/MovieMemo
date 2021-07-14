@@ -14,7 +14,6 @@ class DetailMovieViewController: UIViewController {
   @IBOutlet weak var averageLabel: UILabel!
   @IBOutlet weak var overviewLabel: UILabel!
   var id: Int = 0
-  var detailMovieData = [Movie]()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -45,6 +44,9 @@ class DetailMovieViewController: UIViewController {
   @IBAction func pencilBtnTap(_ sender: Any) {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let composeVC = storyboard.instantiateViewController(withIdentifier: "ComposeVC")
+//    guard let composeVC = self.storyboard?.instantiateViewController(identifier: "ComposeVC") as? ComposeViewController else { return }
+    
+    composeVC.modalPresentationStyle = .fullScreen
     self.present(composeVC, animated: true, completion: nil)
   }
   
