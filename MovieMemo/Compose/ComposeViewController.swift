@@ -10,6 +10,7 @@ import UIKit
 class ComposeViewController: UIViewController {
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var memoTextView: UITextView!
+  var posterImageString: String = ""
   
   let formatter: DateFormatter = {
     let dateFormatter = DateFormatter()
@@ -33,7 +34,7 @@ class ComposeViewController: UIViewController {
     let nowDate = Date()
     guard let title = titleTextField.text,
           let memo = memoTextView.text else { return }
-    DataManager.shared.addNewMemp(title, memo, nowDate)
+    DataManager.shared.addNewMemp(title, memo, posterImageString, nowDate)
     self.dismiss(animated: true, completion: nil)
   }
 }

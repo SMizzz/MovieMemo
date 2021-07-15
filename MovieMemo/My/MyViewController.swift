@@ -28,37 +28,55 @@ class MyViewController: UIViewController {
   }
   
   
-  @IBAction func filterBtnTap(_ sender: Any) {
-  }
-  
-  
 }
 
-extension MyViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension MyViewController:
+  UICollectionViewDelegate,
+  UICollectionViewDataSource,
+  UICollectionViewDelegateFlowLayout {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    numberOfItemsInSection section: Int
+  ) -> Int {
     return DataManager.shared.memoData.count
   }
   
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    cellForItemAt indexPath: IndexPath
+  ) -> UICollectionViewCell {
     guard let cell = memoCollectionView.dequeueReusableCell(withReuseIdentifier: "MemoCell", for: indexPath) as? MemoCell else { return UICollectionViewCell() }
     let memo = DataManager.shared.memoData[indexPath.item]
     cell.titleLabel.text = memo.title
-    cell.posterImageView.image = UIImage(named: "harrypotter")
-//    cell.imageBtn.setImage(UIImage(named: "harrypotter"), for: .normal)
-//    cell.imageBtn.setImage(UIImage(named: "harrypotter"), for: .normal)
-//    cell.titleLabel.text = "해리포터와 불사조 기사단을 보고 나서"
+    if let image = memo.posterImage {
+      cell.posterImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(image)"))
+    } else {
+      cell.posterImageView.image = UIImage(named: "harrypotter")
+      print("이미지가 없습니다.")
+    }
     return cell
   }
   
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 330, height: 590)
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    sizeForItemAt indexPath: IndexPath
+  ) -> CGSize {
+    return CGSize(width: view.frame.width, height: 590)
   }
   
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    minimumLineSpacingForSectionAt section: Int
+  ) -> CGFloat {
     return 20.0
   }
   
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    didSelectItemAt indexPath: IndexPath
+  ) {
     print("did select item")
   }
 }

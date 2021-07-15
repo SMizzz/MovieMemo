@@ -309,13 +309,7 @@
                                 <rect key="frame" x="0.0" y="27" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem id="9Py-W5-43R">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="list.bullet" catalog="system" id="Xfg-fP-ATG">
-                                            <connections>
-                                                <action selector="filterBtnTap:" destination="pbG-Wn-ahR" id="rg8-Ch-LH9"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem id="9Py-W5-43R"/>
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xKn-zx-fHz">
@@ -336,21 +330,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="330" height="590"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="해리포터와 불사조 기사단을 보고나서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYy-wU-5Qd">
-                                                    <rect key="frame" x="10" y="545" width="310" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해리포터와 불사조 기사단을 보고나서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYy-wU-5Qd">
+                                                    <rect key="frame" x="10" y="544" width="310" height="22"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3N-6Z-sEp">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z3N-6Z-sEp">
                                                     <rect key="frame" x="0.0" y="0.0" width="330" height="520"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="330" id="d00-Pq-eI7"/>
+                                                        <constraint firstAttribute="height" constant="520" id="gab-dz-dGz"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="xYy-wU-5Qd" firstAttribute="top" secondItem="Z3N-6Z-sEp" secondAttribute="bottom" constant="24" id="0Zf-UR-dhW"/>
                                                 <constraint firstItem="xYy-wU-5Qd" firstAttribute="leading" secondItem="oZm-G0-peA" secondAttribute="leading" constant="10" id="CJ5-bw-iIX"/>
+                                                <constraint firstItem="Z3N-6Z-sEp" firstAttribute="leading" secondItem="oZm-G0-peA" secondAttribute="leading" id="IC3-LT-6BZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z3N-6Z-sEp" secondAttribute="trailing" id="WgT-YX-GGV"/>
                                                 <constraint firstAttribute="trailing" secondItem="xYy-wU-5Qd" secondAttribute="trailing" constant="10" id="r79-qX-pyh"/>
+                                                <constraint firstItem="Z3N-6Z-sEp" firstAttribute="top" secondItem="oZm-G0-peA" secondAttribute="top" id="wyQ-XP-Ioe"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="330" height="590"/>
@@ -578,7 +579,7 @@ Lorem Ipsum is simply dummy text of the printing and </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apf-hq-ufJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4729" y="814"/>
+            <point key="canvasLocation" x="5612" y="1608"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="eAf-uJ-1OZ">
@@ -588,18 +589,43 @@ Lorem Ipsum is simply dummy text of the printing and </string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Titled" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3eC-En-LQq">
+                                <rect key="frame" x="20" y="115" width="374" height="36"/>
+                                <color key="textColor" red="0.54160096749999997" green="0.53569816989999997" blue="0.59996189020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gg8-7f-bX1">
+                                <rect key="frame" x="20" y="166" width="374" height="220"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="aW7-9j-bqe"/>
+                                    <constraint firstAttribute="height" constant="220" id="eZJ-8s-M3P"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="harrypotter" translatesAutoresizingMaskIntoConstraints="NO" id="67Y-TN-dx1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ja0-d0-ZLz"/>
+                                    <constraint firstAttribute="width" constant="414" id="vPB-t2-rmj"/>
+                                </constraints>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHv-Pe-vBY">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem id="hwH-uH-FCh">
                                         <barButtonItem key="leftBarButtonItem" image="cancel" id="PLP-Xl-8fd">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="cancelBtnTap:" destination="65K-OL-Cuu" id="bQp-KF-80M"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="check" id="8AL-es-S6t">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="saveBtnTap:" destination="65K-OL-Cuu" id="ulX-Az-2kt"/>
                                             </connections>
@@ -607,29 +633,14 @@ Lorem Ipsum is simply dummy text of the printing and </string>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Titled" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3eC-En-LQq">
-                                <rect key="frame" x="20" y="103" width="374" height="36"/>
-                                <color key="textColor" red="0.54160096749999997" green="0.53569816989999997" blue="0.59996189020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gg8-7f-bX1">
-                                <rect key="frame" x="20" y="154" width="374" height="310"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="aW7-9j-bqe"/>
-                                    <constraint firstAttribute="height" constant="310" id="eZJ-8s-M3P"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FXq-d8-Prq"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3eC-En-LQq" firstAttribute="top" secondItem="xHv-Pe-vBY" secondAttribute="bottom" constant="15" id="6G2-aw-ohF"/>
+                            <constraint firstItem="3eC-En-LQq" firstAttribute="top" secondItem="67Y-TN-dx1" secondAttribute="bottom" constant="15" id="6G2-aw-ohF"/>
+                            <constraint firstItem="67Y-TN-dx1" firstAttribute="top" secondItem="T86-uy-TzH" secondAttribute="top" id="8Jl-I0-xcc"/>
+                            <constraint firstItem="67Y-TN-dx1" firstAttribute="trailing" secondItem="FXq-d8-Prq" secondAttribute="trailing" id="8c4-2L-Duc"/>
+                            <constraint firstItem="67Y-TN-dx1" firstAttribute="leading" secondItem="FXq-d8-Prq" secondAttribute="leading" id="HqJ-bb-bWE"/>
                             <constraint firstItem="xHv-Pe-vBY" firstAttribute="trailing" secondItem="FXq-d8-Prq" secondAttribute="trailing" id="L1y-3U-iGP"/>
                             <constraint firstItem="3eC-En-LQq" firstAttribute="leading" secondItem="FXq-d8-Prq" secondAttribute="leading" constant="20" id="NMI-dY-zFh"/>
                             <constraint firstItem="FXq-d8-Prq" firstAttribute="trailing" secondItem="3eC-En-LQq" secondAttribute="trailing" constant="20" id="P3M-Bx-suz"/>
@@ -640,6 +651,7 @@ Lorem Ipsum is simply dummy text of the printing and </string>
                             <constraint firstItem="xHv-Pe-vBY" firstAttribute="leading" secondItem="FXq-d8-Prq" secondAttribute="leading" id="csT-vD-V2W"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ahs-Kn-mgo"/>
                     <connections>
                         <outlet property="memoTextView" destination="Gg8-7f-bX1" id="URM-x6-Ouo"/>
                         <outlet property="titleTextField" destination="3eC-En-LQq" id="3TR-mS-V8n"/>
@@ -647,7 +659,34 @@ Lorem Ipsum is simply dummy text of the printing and </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzO-hF-diw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5611.594202898551" y="813.61607142857144"/>
+            <point key="canvasLocation" x="6411.594202898551" y="1607.8125"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rak-7F-F7r">
+            <objects>
+                <viewController id="HC3-c7-dqj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NEN-qp-GR7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKF-Ds-rCf">
+                                <rect key="frame" x="0.0" y="33" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="gML-xp-5lH">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="rBP-JC-Bft"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="FRm-G1-9wD"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KCx-sg-nmS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hig-Ga-vAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4729" y="814"/>
         </scene>
         <!--Logout View Controller-->
         <scene sceneID="kNG-9o-Ork">
@@ -833,8 +872,8 @@ Lorem Ipsum is simply dummy text of the printing and </string>
         <image name="compose" width="80.5" height="80.5"/>
         <image name="edit" width="38" height="38"/>
         <image name="facebook-logo" width="2400" height="4622"/>
+        <image name="harrypotter" width="840" height="1200"/>
         <image name="kakao-logo" width="1954" height="1804"/>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="profile" width="240" height="240"/>
         <image name="setting" width="120" height="120"/>
         <systemColor name="systemBackgroundColor">

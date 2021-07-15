@@ -21,7 +21,7 @@ class DataManager {
   var memoData = [Memo]()
   func fetchMemo() {
     let request: NSFetchRequest<Memo> = Memo.fetchRequest()
-    let sortByDateDesc = NSSortDescriptor(key: "date", ascending: false)
+    let sortByDateDesc = NSSortDescriptor(key: "date", ascending: true)
     request.sortDescriptors = [sortByDateDesc]
     
     do {
@@ -34,11 +34,13 @@ class DataManager {
   func addNewMemp(
     _ title: String,
     _ memo: String,
+    _ posterPath: String,
     _ date: Date
   ) {
     let newMemo = Memo(context: mainContext)
     newMemo.date = date
     newMemo.title = title
+    newMemo.posterImage = posterPath
     newMemo.memo = memo
     saveContext()
   }
