@@ -33,6 +33,7 @@ class ComposeViewController: UIViewController {
     let nowDate = Date()
     guard let title = titleTextField.text,
           let memo = memoTextView.text else { return }
+    DataManager.shared.addNewMemp(title, memo, nowDate)
     self.dismiss(animated: true, completion: nil)
   }
 }

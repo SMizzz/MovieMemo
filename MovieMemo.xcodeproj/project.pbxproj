@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021886F4269FF80E00EAC290 /* Memo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 021886F2269FF80E00EAC290 /* Memo.xcdatamodeld */; };
+		021886F7269FF8E700EAC290 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021886F6269FF8E700EAC290 /* DataManager.swift */; };
 		022DD31B269BE7960046F45E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022DD319269BE7960046F45E /* TableViewCell.swift */; };
 		022DD31C269BE7960046F45E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022DD31A269BE7960046F45E /* TableViewCell.xib */; };
 		027F2E902693FD1D00BFCDA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F2E8F2693FD1D00BFCDA9 /* AppDelegate.swift */; };
@@ -22,8 +24,6 @@
 		027F2EC826942B9400BFCDA9 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F2EC726942B9400BFCDA9 /* AuthAPI.swift */; };
 		027F2ECC26942B9F00BFCDA9 /* AuthNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F2ECB26942B9F00BFCDA9 /* AuthNetworkManager.swift */; };
 		02B68A2A269EEB09007923D0 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B68A29269EEB09007923D0 /* MemoData.swift */; };
-		02B68A3B269F2553007923D0 /* MemoData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02B68A39269F2553007923D0 /* MemoData.xcdatamodeld */; };
-		02B68A3E269F2585007923D0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B68A3D269F2585007923D0 /* DataManager.swift */; };
 		02C0DB15269D2C530041AED9 /* UpcomingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0DB13269D2C530041AED9 /* UpcomingCell.swift */; };
 		02C0DB16269D2C530041AED9 /* UpcomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02C0DB14269D2C530041AED9 /* UpcomingCell.xib */; };
 		02C0DB1A269D2CE90041AED9 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0DB18269D2CE90041AED9 /* MovieListCell.swift */; };
@@ -44,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021886F3269FF80E00EAC290 /* Memo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memo.xcdatamodel; sourceTree = "<group>"; };
+		021886F6269FF8E700EAC290 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		022DD319269BE7960046F45E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		022DD31A269BE7960046F45E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		027F2E8C2693FD1D00BFCDA9 /* MovieMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,8 +63,6 @@
 		027F2EC726942B9400BFCDA9 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		027F2ECB26942B9F00BFCDA9 /* AuthNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkManager.swift; sourceTree = "<group>"; };
 		02B68A29269EEB09007923D0 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
-		02B68A3A269F2553007923D0 /* MemoData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemoData.xcdatamodel; sourceTree = "<group>"; };
-		02B68A3D269F2585007923D0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		02C0DB13269D2C530041AED9 /* UpcomingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCell.swift; sourceTree = "<group>"; };
 		02C0DB14269D2C530041AED9 /* UpcomingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingCell.xib; sourceTree = "<group>"; };
 		02C0DB18269D2CE90041AED9 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
@@ -194,8 +194,8 @@
 		02B68A38269F253B007923D0 /* MemoData */ = {
 			isa = PBXGroup;
 			children = (
-				02B68A3D269F2585007923D0 /* DataManager.swift */,
-				02B68A39269F2553007923D0 /* MemoData.xcdatamodeld */,
+				021886F2269FF80E00EAC290 /* Memo.xcdatamodeld */,
+				021886F6269FF8E700EAC290 /* DataManager.swift */,
 			);
 			path = MemoData;
 			sourceTree = "<group>";
@@ -404,7 +404,6 @@
 				027F2EB62694257600BFCDA9 /* SearchViewController.swift in Sources */,
 				027F2ECC26942B9F00BFCDA9 /* AuthNetworkManager.swift in Sources */,
 				027F2EAD2694252800BFCDA9 /* LoginViewController.swift in Sources */,
-				02B68A3B269F2553007923D0 /* MemoData.xcdatamodeld in Sources */,
 				022DD31B269BE7960046F45E /* TableViewCell.swift in Sources */,
 				02C0DB29269D661F0041AED9 /* ComposeViewController.swift in Sources */,
 				02DDE1482699DAF00008F7FC /* MovieAPI.swift in Sources */,
@@ -425,8 +424,9 @@
 				027F2EC0269426BF00BFCDA9 /* Extension.swift in Sources */,
 				02C0DB23269D30C00041AED9 /* MovieInformViewController.swift in Sources */,
 				02DDE14B2699DC010008F7FC /* MovieNetworkManager.swift in Sources */,
+				021886F4269FF80E00EAC290 /* Memo.xcdatamodeld in Sources */,
 				02D4D5ED26957F5000BC0CBB /* MyViewController.swift in Sources */,
-				02B68A3E269F2585007923D0 /* DataManager.swift in Sources */,
+				021886F7269FF8E700EAC290 /* DataManager.swift in Sources */,
 				02D4D5DF26954ECD00BC0CBB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,13 +633,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		02B68A39269F2553007923D0 /* MemoData.xcdatamodeld */ = {
+		021886F2269FF80E00EAC290 /* Memo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				02B68A3A269F2553007923D0 /* MemoData.xcdatamodel */,
+				021886F3269FF80E00EAC290 /* Memo.xcdatamodel */,
 			);
-			currentVersion = 02B68A3A269F2553007923D0 /* MemoData.xcdatamodel */;
-			path = MemoData.xcdatamodeld;
+			currentVersion = 021886F3269FF80E00EAC290 /* Memo.xcdatamodel */;
+			path = Memo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

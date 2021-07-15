@@ -16,6 +16,12 @@ class MyViewController: UIViewController {
     configureCollectionView()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(true)
+    DataManager.shared.fetchMemo()
+    self.memoCollectionView.reloadData()
+  }
+  
   private func configureCollectionView() {
     memoCollectionView.delegate = self
     memoCollectionView.dataSource = self
@@ -30,13 +36,17 @@ class MyViewController: UIViewController {
 
 extension MyViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 4
+    return DataManager.shared.memoData.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = memoCollectionView.dequeueReusableCell(withReuseIdentifier: "MemoCell", for: indexPath) as? MemoCell else { return UICollectionViewCell() }
-    cell.imageBtn.setImage(UIImage(named: "harrypotter"), for: .normal)
-    cell.titleLabel.text = "해리포터와 불사조 기사단을 보고 나서"
+    let memo = DataManager.shared.memoData[indexPath.item]
+    cell.titleLabel.text = memo.title
+    cell.posterImageView.image = UIImage(named: "harrypotter")
+//    cell.imageBtn.setImage(UIImage(named: "harrypotter"), for: .normal)
+//    cell.imageBtn.setImage(UIImage(named: "harrypotter"), for: .normal)
+//    cell.titleLabel.text = "해리포터와 불사조 기사단을 보고 나서"
     return cell
   }
   
@@ -46,5 +56,9 @@ extension MyViewController: UICollectionViewDelegate, UICollectionViewDataSource
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return 20.0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print("did select item")
   }
 }

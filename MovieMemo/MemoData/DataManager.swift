@@ -2,7 +2,7 @@
 //  DataManager.swift
 //  MovieMemo
 //
-//  Created by 신미지 on 2021/07/14.
+//  Created by 신미지 on 2021/07/15.
 //
 
 import Foundation
@@ -10,7 +10,8 @@ import CoreData
 
 class DataManager {
   static let shared = DataManager()
-  private init() {
+  private init () {
+    
   }
   
   var mainContext: NSManagedObjectContext {
@@ -18,8 +19,7 @@ class DataManager {
   }
   
   var memoData = [Memo]()
-  
-  func fetchPost() {
+  func fetchMemo() {
     let request: NSFetchRequest<Memo> = Memo.fetchRequest()
     let sortByDateDesc = NSSortDescriptor(key: "date", ascending: false)
     request.sortDescriptors = [sortByDateDesc]
@@ -27,19 +27,19 @@ class DataManager {
     do {
       memoData = try mainContext.fetch(request)
     } catch {
-      print(error)
+      print(error.localizedDescription)
     }
   }
   
-  func addNewMemo(
+  func addNewMemp(
     _ title: String,
     _ memo: String,
-    _ date : Date
+    _ date: Date
   ) {
     let newMemo = Memo(context: mainContext)
+    newMemo.date = date
     newMemo.title = title
     newMemo.memo = memo
-    newMemo.date = date
     saveContext()
   }
   
@@ -50,10 +50,9 @@ class DataManager {
   
   // MARK: - Core Data stack
   lazy var persistentContainer: NSPersistentContainer = {
-    let container = NSPersistentContainer(name: "MemoData")
+    let container = NSPersistentContainer(name: "Memo")
     container.loadPersistentStores(completionHandler: { (storeDescription, error) in
       if let error = error as NSError? {
-        
         fatalError("Unresolved error \(error), \(error.userInfo)")
       }
     })

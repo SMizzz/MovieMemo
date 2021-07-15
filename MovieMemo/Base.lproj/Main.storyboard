@@ -336,37 +336,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="330" height="590"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해리포터와 불사조 기사단을 보고나서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYy-wU-5Qd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="해리포터와 불사조 기사단을 보고나서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYy-wU-5Qd">
                                                     <rect key="frame" x="10" y="545" width="310" height="22"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdW-M3-mU0">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3N-6Z-sEp">
                                                     <rect key="frame" x="0.0" y="0.0" width="330" height="520"/>
-                                                    <color key="backgroundColor" red="1" green="0.69098172849999995" blue="0.96383203070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="330" id="6wG-Oq-m1h"/>
-                                                        <constraint firstAttribute="height" constant="520" id="IQg-ob-be2"/>
-                                                    </constraints>
-                                                    <connections>
-                                                        <action selector="imageBtnTap:" destination="NuC-UR-MVd" eventType="touchUpInside" id="DiP-Ky-rkb"/>
-                                                        <action selector="imageBtnTap:" destination="nKO-Yc-bZd" eventType="touchUpInside" id="SVR-M2-n3Q"/>
-                                                    </connections>
-                                                </button>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="vdW-M3-mU0" secondAttribute="trailing" id="28c-QY-8nv"/>
-                                                <constraint firstItem="vdW-M3-mU0" firstAttribute="leading" secondItem="oZm-G0-peA" secondAttribute="leading" id="58S-Dc-yqD"/>
                                                 <constraint firstItem="xYy-wU-5Qd" firstAttribute="leading" secondItem="oZm-G0-peA" secondAttribute="leading" constant="10" id="CJ5-bw-iIX"/>
                                                 <constraint firstAttribute="trailing" secondItem="xYy-wU-5Qd" secondAttribute="trailing" constant="10" id="r79-qX-pyh"/>
-                                                <constraint firstItem="vdW-M3-mU0" firstAttribute="top" secondItem="oZm-G0-peA" secondAttribute="top" id="siC-a2-xLr"/>
-                                                <constraint firstItem="xYy-wU-5Qd" firstAttribute="top" secondItem="vdW-M3-mU0" secondAttribute="bottom" constant="25" id="t5q-4u-C1q"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="330" height="590"/>
                                         <connections>
-                                            <outlet property="imageBtn" destination="vdW-M3-mU0" id="yPh-Jx-s5h"/>
+                                            <outlet property="posterImageView" destination="Z3N-6Z-sEp" id="GGL-fr-7s9"/>
                                             <outlet property="titleLabel" destination="xYy-wU-5Qd" id="HVB-yN-tlx"/>
                                         </connections>
                                     </collectionViewCell>
@@ -383,7 +372,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpz-gh-u6s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="NuC-UR-MVd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3850.7246376811595" y="813.61607142857144"/>
         </scene>
@@ -464,7 +452,6 @@
         <!--Item-->
         <scene sceneID="T3o-Ec-9AT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="apf-hq-ufJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="DetailMovieVC" id="Qoa-RH-wga" customClass="DetailMovieViewController" customModule="MovieMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8TE-Sp-Iu0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -479,8 +466,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCo-Ub-zyf">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="harrypotter" translatesAutoresizingMaskIntoConstraints="NO" id="zS1-9r-iGv">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zS1-9r-iGv">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="570"/>
+                                                        <color key="backgroundColor" red="0.66439363959999997" green="0.59894100380000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="414" id="BTI-BD-6W4"/>
                                                             <constraint firstAttribute="height" constant="570" id="Cnw-xs-Hvy"/>
@@ -541,12 +529,12 @@ Lorem Ipsum is simply dummy text of the printing and </string>
                                 <viewLayoutGuide key="frameLayoutGuide" id="FPS-rh-MDw"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqF-sE-BAq">
-                                <rect key="frame" x="329" y="812" width="35" height="35"/>
+                                <rect key="frame" x="329" y="782" width="65" height="65"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="NBI-Pd-x5e"/>
-                                    <constraint firstAttribute="height" constant="35" id="kCj-3y-Cud"/>
+                                    <constraint firstAttribute="width" constant="65" id="NBI-Pd-x5e"/>
+                                    <constraint firstAttribute="height" constant="65" id="kCj-3y-Cud"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="edit"/>
+                                <state key="normal" title="Button" image="compose"/>
                                 <connections>
                                     <action selector="pencilBtnTap:" destination="Qoa-RH-wga" eventType="touchUpInside" id="qqk-8Q-Ck6"/>
                                 </connections>
@@ -574,7 +562,7 @@ Lorem Ipsum is simply dummy text of the printing and </string>
                             <constraint firstItem="9nP-tB-4Jo" firstAttribute="leading" secondItem="iOj-ti-XoM" secondAttribute="leading" id="Rub-l1-NcV"/>
                             <constraint firstItem="9nP-tB-4Jo" firstAttribute="top" secondItem="XuQ-I9-yMw" secondAttribute="bottom" id="SPe-qx-FSn"/>
                             <constraint firstItem="XuQ-I9-yMw" firstAttribute="trailing" secondItem="iOj-ti-XoM" secondAttribute="trailing" id="gD0-sJ-GWo"/>
-                            <constraint firstItem="iOj-ti-XoM" firstAttribute="trailing" secondItem="qqF-sE-BAq" secondAttribute="trailing" constant="50" id="nm2-ed-Cgh"/>
+                            <constraint firstItem="iOj-ti-XoM" firstAttribute="trailing" secondItem="qqF-sE-BAq" secondAttribute="trailing" constant="20" id="nm2-ed-Cgh"/>
                             <constraint firstItem="9nP-tB-4Jo" firstAttribute="top" secondItem="XuQ-I9-yMw" secondAttribute="bottom" id="rac-xJ-5kO"/>
                             <constraint firstItem="iOj-ti-XoM" firstAttribute="bottom" secondItem="qqF-sE-BAq" secondAttribute="bottom" constant="15" id="tSY-jf-gtG"/>
                             <constraint firstItem="XuQ-I9-yMw" firstAttribute="top" secondItem="iOj-ti-XoM" secondAttribute="top" id="zbo-xI-kLW"/>
@@ -588,6 +576,7 @@ Lorem Ipsum is simply dummy text of the printing and </string>
                         <outlet property="titleLabel" destination="YPv-Dt-WIS" id="iqQ-9g-dad"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apf-hq-ufJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4729" y="814"/>
         </scene>
@@ -841,15 +830,18 @@ Lorem Ipsum is simply dummy text of the printing and </string>
         <image name="arrow-left" width="24" height="24"/>
         <image name="cancel" width="24" height="24"/>
         <image name="check" width="24" height="24"/>
+        <image name="compose" width="80.5" height="80.5"/>
         <image name="edit" width="38" height="38"/>
         <image name="facebook-logo" width="2400" height="4622"/>
-        <image name="harrypotter" width="840" height="1200"/>
         <image name="kakao-logo" width="1954" height="1804"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="profile" width="240" height="240"/>
         <image name="setting" width="120" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
