@@ -142,13 +142,36 @@ extension MovieListViewController:
     guard let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailMovieVC") as? DetailMovieViewController else { return }
     if indexPath.section == 0 {
       print(topRatedData[indexPath.item].id)
-      detailVC.id = topRatedData[indexPath.item].id
+      detailVC.id = topRatedData[indexPath.item].id!
     } else if indexPath.section == 1 {
-      detailVC.id = upComingData[indexPath.item].id
+      detailVC.id = upComingData[indexPath.item].id!
     } else {
-      detailVC.id = nowPlayingData[indexPath.item].id
+      detailVC.id = nowPlayingData[indexPath.item].id!
     }
-    detailVC.modalPresentationStyle = .fullScreen
-    self.present(detailVC, animated: true, completion: nil)
+//    detailVC.modalPresentationStyle = .fullScreen
+    navigationController?.pushViewController(detailVC, animated: true)
+//    self.present(detailVC, animated: true, completion: nil)
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 40
+  }
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
+    view.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+    let label = UILabel(frame: CGRect(x: 8, y: 4, width: view.bounds.size.width - 16, height: view.bounds.size.height - 8))
+    label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    label.font = UIFont.systemFont(ofSize: 15)
+    label.textColor = .lightGray
+    view.addSubview(label)
+    if section == 0 {
+      label.text = "Top Rated"
+    } else if section == 1 {
+      label.text = "UpComing Rated"
+    } else {
+      label.text = "Now Playing"
+    }
+    return view
   }
 }

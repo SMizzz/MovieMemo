@@ -17,8 +17,10 @@ class MovieNetworkManager {
     provider.request(source) { (result) in
       switch result {
       case .success(let res):
+        print("---------",res)
         do {
           let movieData = try JSONDecoder().decode(MovieDataStore.self, from: res.data)
+          print("++++++++++++", movieData)
           completion(movieData.results)
         } catch let err {
           print(err.localizedDescription)
@@ -51,4 +53,13 @@ class MovieNetworkManager {
       }
     }
   }
+  
+//  static func searchData(
+//    source: MovieAPI,
+//    completion: @escaping([Movie]) -> ()
+//  ) {
+//    provider.request(MovieAPI) { (result) in
+//      <#code#>
+//    }
+//  }
 }

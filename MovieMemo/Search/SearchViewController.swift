@@ -16,6 +16,7 @@ class SearchViewController: UIViewController {
     profileBtn.clipsToBounds = true
     profileBtn.layer.cornerRadius = profileBtn.frame.height / 2
     getData()
+    searchData()
   }
   
   private func getData() {
@@ -23,6 +24,12 @@ class SearchViewController: UIViewController {
     AuthNetworkManager.getCurrent(token: token) { [self] (user) in
       print(user)
       profileBtn.kf.setImage(with: URL(string: user.avatar), for: .normal)
+    }
+  }
+  
+  private func searchData() {
+    MovieNetworkManager.getMovieData(source: .movieSearch(query: "zombie")) { (movies) in
+      print(movies)
     }
   }
   
